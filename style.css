@@ -1,0 +1,475 @@
+#Header {
+  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(136, 231, 231, 0.7)), url("image-3.jpeg");
+  background-position: top;
+  background-size: cover;
+  height: 55rem;
+  text-align: center;
+  position: relative;
+  backface-visibility: hidden;
+  border-radius: 3rem; }
+  @media (max-width: 1200px) {
+    #Header {
+      height: 55rem;
+      border-radius: 2.5rem; } }
+  @media (max-width: 900px) {
+    #Header {
+      height: 55rem;
+      border-radius: 2.5rem; } }
+  @media (max-width: 700px) {
+    #Header {
+      height: 55rem;
+      border-radius: 2.5rem; } }
+  @media (max-width: 600px) {
+    #Header {
+      height: 55rem;
+      border-radius: 2.5rem; } }
+  @media (max-width: 500px) {
+    #Header {
+      height: 55rem;
+      border-radius: 2.5rem; } }
+  @media (max-width: 450px) {
+    #Header {
+      height: 55rem;
+      border-radius: 2.5rem; } }
+  @media (max-width: 400px) {
+    #Header {
+      height: 55rem;
+      border-radius: 3rem; } }
+
+#text_box {
+  position: absolute;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.2rem 1.5rem;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 20%, 100% 80%, 85% 100%, 15% 100%, 0% 80%, 0% 20%);
+  border: 1rem solid #424242;
+  /* Border with color */ }
+  #text_box h1 {
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem; }
+    #text_box h1 #name {
+      font-size: 3rem;
+      letter-spacing: 0.6rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: azure;
+      animation: moveinright 2s ease-out; }
+    #text_box h1 #status {
+      font-size: 1.8rem;
+      letter-spacing: 0.7rem;
+      font-weight: normal;
+      color: azure;
+      animation: moveinleft 2s ease-out; }
+  #text_box #button_test {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2.3rem;
+    background-color: #484646;
+    color: #ac8282;
+    border-radius: 3rem;
+    padding: 1.7rem 2.5rem;
+    animation: moveintop 1.8s ease-out; }
+    #text_box #button_test:hover {
+      transform: translateY(-0.7rem);
+      background-color: #484646;
+      color: #ac8282;
+      box-shadow: 0 1.5rem 1.5rem rgba(128, 128, 128, 0.518); }
+    #text_box #button_test:active {
+      transform: translateY(0.15rem);
+      box-shadow: 0 0.9rem 1rem rgba(128, 128, 128, 0.518); }
+
+@keyframes moveintop {
+  0% {
+    opacity: 0;
+    transform: translateY(7rem);
+    color: black; }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes moveinright {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+    color: black; }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    transform: translateX(0);
+    color: azure; } }
+
+@keyframes moveinleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+    color: black; }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    transform: translateX(0);
+    color: azure; } }
+
+.nav-checkbox {
+  display: none; }
+  .nav-checkbox:checked ~ .nav-background {
+    display: inline-block; }
+  .nav-checkbox:checked + .checkbox .line {
+    background-color: transparent; }
+  .nav-checkbox:checked + .checkbox .line::before {
+    transform: rotate(135deg);
+    top: 0; }
+  .nav-checkbox:checked + .checkbox .line::after {
+    transform: rotate(-135deg);
+    top: 0; }
+
+.checkbox {
+  position: absolute;
+  z-index: 2000;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  top: 5rem;
+  right: 5rem;
+  background-color: #484646;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 0.8rem 1.5rem rgba(128, 128, 128, 0.518); }
+  .checkbox .line {
+    position: relative;
+    margin-top: 2.4rem; }
+    .checkbox .line, .checkbox .line::before, .checkbox .line::after {
+      display: inline-block;
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: azure; }
+    .checkbox .line::before, .checkbox .line::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      transition: all 0.2s; }
+    .checkbox .line::before {
+      top: -0.8rem; }
+    .checkbox .line::after {
+      top: 0.8rem; }
+
+.nav-background {
+  display: inline-block;
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(240, 255, 255, 0.2);
+  top: 7rem;
+  right: 7rem;
+  width: 0;
+  height: 0;
+  border-radius: 2rem;
+  transition: all 0.4s ease;
+  backface-visibility: hidden; }
+
+.nav-checkbox:checked ~ .nav-background {
+  height: 30rem;
+  width: 15rem;
+  top: 4.5rem;
+  right: 4.5rem;
+  background-color: rgba(240, 255, 255, 0.2); }
+
+.nav-checkbox:checked ~ .menu-container {
+  transform: translate(-40%, -60%);
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s, visibility 0.8s, transform 0.8s ease; }
+
+.nav-checkbox:not(:checked) ~ .menu-container {
+  transform: translate(-30%, -95%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s, visibility 0.1s, transform 0.1s ease; }
+
+.menu-container {
+  position: absolute;
+  text-align: center;
+  color: black;
+  z-index: 1999;
+  top: 23.5rem;
+  right: 2rem;
+  backface-visibility: hidden; }
+  .menu-container ul {
+    list-style: none; }
+    .menu-container ul li {
+      margin-bottom: 2rem; }
+      .menu-container ul li a {
+        text-decoration: none;
+        color: #ac8282;
+        background-color: #484646;
+        font-size: 2.5rem;
+        padding: 0.7rem;
+        border-radius: 1rem; }
+
+.first-card {
+  position: relative;
+  width: 25rem;
+  height: 40rem;
+  perspective: 1000px;
+  /* Added perspective for 3D effect */ }
+  .first-card .card-1 {
+    position: absolute;
+    transform-style: preserve-3d;
+    /* this is important    */
+    width: 100%;
+    height: 100%;
+    transition: transform 1s, box-shadow 1s;
+    box-shadow: 0 0 30px -5px #31302f;
+    border-radius: 20px; }
+    .first-card .card-1 .card-front-1 {
+      position: absolute;
+      color: aliceblue;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      background-color: #424242;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .first-card .card-1 .card-front-1 .profile {
+        position: absolute;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+        background-image: url(kingsflicker.png);
+        background-size: cover;
+        background-position: center;
+        content: '';
+        top: 3rem; }
+      .first-card .card-1 .card-front-1 .text {
+        position: absolute;
+        top: 20rem;
+        width: 95%; }
+        .first-card .card-1 .card-front-1 .text h2 {
+          font-size: 3rem; }
+        .first-card .card-1 .card-front-1 .text p {
+          font-size: 1.6rem;
+          color: #ac8282; }
+        .first-card .card-1 .card-front-1 .text .about {
+          padding: 0.5rem;
+          position: absolute;
+          top: 7rem;
+          border: 0.4rem solid aliceblue;
+          border-radius: 1rem;
+          /* Apply border */
+          content: '';
+          width: 100%; }
+    .first-card .card-1 .card-back-1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("king.jpg");
+      background-size: cover;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      border-radius: 20px; }
+
+.first-card:hover .card-1 {
+  transform: rotateY(180deg);
+  box-shadow: 0 0 30px -5px #ce9359; }
+
+.second-card {
+  position: relative;
+  width: 25rem;
+  height: 40rem;
+  perspective: 1000px;
+  /* Added perspective for 3D effect */ }
+  .second-card .card-2 {
+    position: absolute;
+    transform-style: preserve-3d;
+    /* this is important    */
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    box-shadow: 0 0 30px -5px #31302f;
+    border-radius: 20px; }
+    .second-card .card-2 .card-front-2 {
+      position: absolute;
+      color: aliceblue;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      background-color: #424242;
+      backface-visibility: hidden;
+      border-radius: 20px; }
+    .second-card .card-2 .card-back-2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      border-radius: 20px; }
+    .second-card .card-2:hover {
+      transform: rotateY(180deg);
+      box-shadow: 0 0 30px -5px #ce9359; }
+
+.third-card {
+  position: relative;
+  width: 25rem;
+  height: 40rem;
+  perspective: 1000px;
+  /* Added perspective for 3D effect */ }
+  .third-card .card-3 {
+    position: absolute;
+    transform-style: preserve-3d;
+    /* this is important    */
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    box-shadow: 0 0 30px -5px #31302f;
+    border-radius: 20px; }
+    .third-card .card-3 .card-front-3 {
+      position: absolute;
+      color: aliceblue;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      background-color: #424242;
+      backface-visibility: hidden;
+      border-radius: 20px; }
+    .third-card .card-3 .card-back-3 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      border-radius: 20px; }
+    .third-card .card-3:hover {
+      transform: rotateY(180deg);
+      box-shadow: 0 0 30px -5px #ce9359; }
+
+.section-about {
+  background-image: linear-gradient(to right, rgba(11, 141, 141, 0.7), rgba(65, 192, 192, 0.7)), url("section-image.jpg");
+  margin-top: 2rem;
+  background-position: bottom;
+  background-size: cover;
+  font-size: 3rem;
+  border-radius: 3rem; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10rem; }
+
+.footer {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  background-color: aqua;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  background-image: linear-gradient(to right, rgba(11, 141, 141, 0.7), rgba(65, 192, 192, 0.7)), url("footer.jpg");
+  background-size: cover; }
+
+.right-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem; }
+  .right-footer .follow {
+    text-align: center; }
+    .right-footer .follow h2 {
+      margin-bottom: 1rem; }
+    .right-footer .follow a {
+      text-decoration: none; }
+    .right-footer .follow .facebook {
+      width: 2.5rem;
+      stroke: #424242;
+      stroke-miterlimit: 10;
+      stroke-width: 0.1rem; }
+    .right-footer .follow .twitter {
+      width: 2.5rem;
+      stroke: black;
+      stroke-miterlimit: 10;
+      stroke-width: 0.1rem; }
+    .right-footer .follow .linkedin {
+      height: 2.5rem;
+      margin-left: 0.2rem;
+      margin-right: 0.2rem; }
+    .right-footer .follow .insta {
+      width: 2.5rem;
+      stroke: #424242;
+      stroke-miterlimit: 10;
+      stroke-width: 0.1rem; }
+  .right-footer .write {
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem; }
+    .right-footer .write h2 {
+      margin-bottom: 1.4rem; }
+    .right-footer .write a {
+      color: #424242;
+      text-decoration: none; }
+  .right-footer .call {
+    text-align: center; }
+    .right-footer .call h2 {
+      margin-bottom: 1.4rem; }
+    .right-footer .call .phone {
+      color: #424242; }
+  .right-footer .phone,
+  .right-footer .email {
+    font-size: 1.7rem; }
+
+.left-footer {
+  font-size: 1.5rem;
+  align-items: center; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  height: 100%; }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 9px; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 8px; } }
+  @media (max-width: 700px) {
+    html {
+      font-size: 7px; } }
+  @media (max-width: 600px) {
+    html {
+      font-size: 6px; } }
+  @media (max-width: 500px) {
+    html {
+      font-size: 5.5px; } }
+  @media (max-width: 450px) {
+    html {
+      font-size: 5px; } }
+  @media (max-width: 400px) {
+    html {
+      font-size: 4.7px; } }
+
+body {
+  padding: 2.5rem;
+  font-family: sans-serif;
+  background-color: #424242;
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  @media (max-width: 1200px) {
+    body {
+      padding: 20px; } }
+  @media (max-width: 900px) {
+    body {
+      padding: 15px; } }
+  @media (max-width: 700px) {
+    body {
+      padding: 10px; } }
+  @media (max-width: 600px) {
+    body {
+      padding: 8px; } }
