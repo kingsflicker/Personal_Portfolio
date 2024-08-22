@@ -361,31 +361,51 @@
   padding: 10rem; }
 
 .footer {
+  max-width: 100%;
+  position: relative;
   padding: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: auto;
+  overflow: hidden;
   background-color: aqua;
   border-radius: 2rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   background-image: linear-gradient(to right, rgba(11, 141, 141, 0.7), rgba(65, 192, 192, 0.7)), url("footer.jpg");
   background-size: cover; }
 
+.right-footer > div {
+  /* Assuming each flex item is a div */
+  flex: 1;
+  /* Ensures all elements take up equal width */
+  text-align: center;
+  /* Optional: Centers content inside each element */ }
+
 .right-footer {
   display: flex;
-  justify-content: space-between;
-  margin: 1rem; }
+  flex-wrap: wrap;
+  margin: 1rem;
+  justify-content: flex-end;
+  gap: 3rem;
+  /* Adjust spacing between elements */ }
   .right-footer .follow {
     text-align: center; }
     .right-footer .follow h2 {
       margin-bottom: 1rem; }
+    .right-footer .follow .follow-elements {
+      display: flex;
+      flex-wrap: nowrap;
+      /* Prevents the icons from wrapping within the container */
+      gap: 1rem;
+      /* Adjust the spacing between icons */
+      justify-content: center; }
     .right-footer .follow a {
       text-decoration: none; }
     .right-footer .follow .facebook {
       width: 2.5rem;
       stroke: #424242;
-      stroke-miterlimit: 10;
+      stroke-miterlimit: 4;
       stroke-width: 0.1rem; }
     .right-footer .follow .twitter {
       width: 2.5rem;
@@ -402,9 +422,7 @@
       stroke-miterlimit: 10;
       stroke-width: 0.1rem; }
   .right-footer .write {
-    text-align: center;
-    margin-left: 3rem;
-    margin-right: 3rem; }
+    text-align: center; }
     .right-footer .write h2 {
       margin-bottom: 1.4rem; }
     .right-footer .write a {
