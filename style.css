@@ -56,12 +56,20 @@
       font-weight: 600;
       color: azure;
       animation: moveinright 2s ease-out; }
+      @media (max-width: 400px) {
+        #text_box h1 #name {
+          font-size: 2.3rem;
+          letter-spacing: 0.7rem; } }
     #text_box h1 #status {
       font-size: 1.8rem;
       letter-spacing: 0.7rem;
       font-weight: normal;
       color: azure;
       animation: moveinleft 2s ease-out; }
+      @media (max-width: 400px) {
+        #text_box h1 #status {
+          font-size: 1.8rem;
+          letter-spacing: 0.6rem; } }
   #text_box #button_test {
     display: inline-block;
     text-decoration: none;
@@ -174,6 +182,9 @@
   top: 4.5rem;
   right: 4.5rem;
   background-color: rgba(240, 255, 255, 0.2); }
+  @media (max-width: 400px) {
+    .nav-checkbox:checked ~ .nav-background {
+      width: 13.5rem; } }
 
 .nav-checkbox:checked ~ .menu-container {
   transform: translate(-40%, -60%);
@@ -195,6 +206,10 @@
   top: 23.5rem;
   right: 2rem;
   backface-visibility: hidden; }
+  @media (max-width: 400px) {
+    .menu-container {
+      top: 23.5rem;
+      right: 1.5rem; } }
   .menu-container ul {
     list-style: none; }
     .menu-container ul li {
@@ -361,18 +376,16 @@
   padding: 10rem; }
 
 .footer {
-  max-width: 100%;
   position: relative;
   padding: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  background-color: aqua;
   border-radius: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background-image: linear-gradient(to right, rgba(11, 141, 141, 0.7), rgba(65, 192, 192, 0.7)), url("footer.jpg");
+  background-image: linear-gradient(to right, rgba(140, 211, 211, 0.7), rgba(125, 208, 208, 0.7), rgba(110, 196, 196, 0.7), rgba(99, 189, 189, 0.7), rgba(85, 182, 182, 0.7), rgba(77, 177, 177, 0.7)), url("footer.jpg");
   background-size: cover; }
 
 .right-footer > div {
@@ -389,10 +402,18 @@
   justify-content: flex-end;
   gap: 3rem;
   /* Adjust spacing between elements */ }
+  @media (max-width: 400px) {
+    .right-footer {
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: space-between; } }
   .right-footer .follow {
     text-align: center; }
     .right-footer .follow h2 {
       margin-bottom: 1rem; }
+      @media (max-width: 400px) {
+        .right-footer .follow h2 {
+          display: none; } }
     .right-footer .follow .follow-elements {
       display: flex;
       flex-wrap: nowrap;
@@ -400,47 +421,84 @@
       gap: 1rem;
       /* Adjust the spacing between icons */
       justify-content: center; }
+      @media (max-width: 400px) {
+        .right-footer .follow .follow-elements {
+          gap: 1.3rem;
+          /* Adjust the spacing between icons */ } }
     .right-footer .follow a {
       text-decoration: none; }
-    .right-footer .follow .facebook {
-      width: 2.5rem;
-      stroke: #424242;
-      stroke-miterlimit: 4;
-      stroke-width: 0.1rem; }
-    .right-footer .follow .twitter {
-      width: 2.5rem;
-      stroke: black;
-      stroke-miterlimit: 10;
-      stroke-width: 0.1rem; }
-    .right-footer .follow .linkedin {
-      height: 2.5rem;
-      margin-left: 0.2rem;
-      margin-right: 0.2rem; }
-    .right-footer .follow .insta {
-      width: 2.5rem;
-      stroke: #424242;
-      stroke-miterlimit: 10;
-      stroke-width: 0.1rem; }
-  .right-footer .write {
-    text-align: center; }
-    .right-footer .write h2 {
-      margin-bottom: 1.4rem; }
-    .right-footer .write a {
-      color: #424242;
-      text-decoration: none; }
-  .right-footer .call {
-    text-align: center; }
-    .right-footer .call h2 {
-      margin-bottom: 1.4rem; }
-    .right-footer .call .phone {
-      color: #424242; }
-  .right-footer .phone,
-  .right-footer .email {
-    font-size: 1.7rem; }
+  .right-footer .facebook {
+    width: 2.5rem;
+    stroke: #424242;
+    stroke-miterlimit: 4;
+    stroke-width: 0.1rem; }
+    @media (max-width: 400px) {
+      .right-footer .facebook {
+        width: 3.5rem; } }
+  .right-footer .twitter {
+    width: 2.5rem;
+    stroke: black;
+    stroke-miterlimit: 10;
+    stroke-width: 0.1rem; }
+    @media (max-width: 400px) {
+      .right-footer .twitter {
+        width: 3.5rem; } }
+  .right-footer .linkedin {
+    height: 2.5rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem; }
+    @media (max-width: 400px) {
+      .right-footer .linkedin {
+        width: 3.5rem;
+        height: 3.5rem; } }
+  .right-footer .insta {
+    width: 2.5rem;
+    stroke: #424242;
+    stroke-miterlimit: 10;
+    stroke-width: 0.1rem; }
+    @media (max-width: 400px) {
+      .right-footer .insta {
+        width: 3.5rem; } }
+
+.write {
+  text-align: center; }
+  .write h2 {
+    margin-bottom: 1.4rem; }
+    @media (max-width: 400px) {
+      .write h2 {
+        display: none; } }
+  .write a {
+    color: #424242;
+    text-decoration: none; }
+
+.call {
+  text-align: center; }
+  .call h2 {
+    margin-bottom: 1.4rem; }
+    @media (max-width: 400px) {
+      .call h2 {
+        display: none; } }
+  .call .phone {
+    color: #424242; }
+
+.phone,
+.email {
+  font-size: 1.7rem; }
+  @media (max-width: 400px) {
+    .phone,
+    .email {
+      font-size: 2.1rem;
+      font-weight: bolder; } }
 
 .left-footer {
-  font-size: 1.5rem;
-  align-items: center; }
+  align-self: flex-start;
+  /* Align item to the start of the cross axis (left) */
+  margin-top: auto;
+  /* Push the item to the bottom */
+  font-size: 1.5rem; }
+  @media (max-width: 400px) {
+    .left-footer {
+      font-size: 1rem; } }
 
 * {
   padding: 0;
