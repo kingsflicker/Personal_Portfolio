@@ -1,5 +1,5 @@
 #Header {
-  background-image: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(136, 231, 231, 0.7)), url("image-3.jpeg");
+  background-image: linear-gradient(to right, rgba(148, 245, 245, 0.7), rgba(190, 244, 244, 0.7)), url("image-3.jpeg");
   background-position: top;
   background-size: cover;
   height: 55rem;
@@ -36,57 +36,88 @@
       height: 55rem;
       border-radius: 3rem; } }
 
-#text_box {
+.header-contact {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; }
+  .header-contact a {
+    cursor: pointer; }
+  .header-contact .Mail-icon {
+    width: 5.4rem;
+    fill: #484646;
+    margin-bottom: 0.5rem; }
+  .header-contact .Linkedin-icon {
+    width: 4.4rem;
+    fill: #484646; }
+  .header-contact .Facebook-icon {
+    width: 4.5rem;
+    fill: #484646; }
+  .header-contact .Instagram-icon {
+    width: 4.5rem;
+    fill: #484646;
+    border-radius: 30%;
+    margin-bottom: 0.4rem; }
+  .header-contact .icon-link {
+    cursor: pointer;
+    /* Ensure pointer events only on the filled part */ }
+  .header-contact .icon-link:hover .a-icon {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1.5rem 1.5rem rgba(128, 128, 128, 0.518); }
+
+.header-container {
   position: absolute;
   height: auto;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1.2rem 1.5rem;
-  clip-path: polygon(15% 0%, 85% 0%, 100% 20%, 100% 80%, 85% 100%, 15% 100%, 0% 80%, 0% 20%);
-  border: 1rem solid #424242;
-  /* Border with color */ }
-  #text_box h1 {
-    margin-top: 0.5rem;
-    margin-bottom: 2.5rem; }
-    #text_box h1 #name {
-      font-size: 3rem;
-      letter-spacing: 0.6rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: azure;
-      animation: moveinright 2s ease-out; }
-      @media (max-width: 400px) {
-        #text_box h1 #name {
-          font-size: 2.3rem;
-          letter-spacing: 0.7rem; } }
-    #text_box h1 #status {
-      font-size: 1.8rem;
-      letter-spacing: 0.7rem;
-      font-weight: normal;
-      color: azure;
-      animation: moveinleft 2s ease-out; }
-      @media (max-width: 400px) {
-        #text_box h1 #status {
-          font-size: 1.8rem;
-          letter-spacing: 0.6rem; } }
-  #text_box #button_test {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 2.3rem;
-    background-color: #484646;
-    color: #ac8282;
-    border-radius: 3rem;
-    padding: 1.7rem 2.5rem;
-    animation: moveintop 1.8s ease-out; }
-    #text_box #button_test:hover {
-      transform: translateY(-0.7rem);
+  transform: translate(-50%, -50%); }
+  .header-container #text_box {
+    padding: 1.2rem 1.5rem;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 20%, 100% 80%, 85% 100%, 15% 100%, 0% 80%, 0% 20%);
+    border: 1rem solid #424242;
+    /* Border with color */ }
+    .header-container #text_box h1 {
+      margin-top: 0.5rem;
+      margin-bottom: 2.5rem; }
+      .header-container #text_box h1 #name {
+        font-size: 3rem;
+        letter-spacing: 0.6rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: azure;
+        animation: moveinright 2s ease-out; }
+        @media (max-width: 400px) {
+          .header-container #text_box h1 #name {
+            font-size: 2.3rem;
+            letter-spacing: 0.7rem; } }
+      .header-container #text_box h1 #status {
+        font-size: 1.8rem;
+        letter-spacing: 0.7rem;
+        font-weight: normal;
+        color: azure;
+        animation: moveinleft 2s ease-out; }
+        @media (max-width: 400px) {
+          .header-container #text_box h1 #status {
+            font-size: 1.8rem;
+            letter-spacing: 0.6rem; } }
+    .header-container #text_box #button_test {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 2.3rem;
       background-color: #484646;
       color: #ac8282;
-      box-shadow: 0 1.5rem 1.5rem rgba(128, 128, 128, 0.518); }
-    #text_box #button_test:active {
-      transform: translateY(0.15rem);
-      box-shadow: 0 0.9rem 1rem rgba(128, 128, 128, 0.518); }
+      border-radius: 3rem;
+      padding: 1.7rem 2.5rem;
+      animation: moveintop 1.8s ease-out; }
+      .header-container #text_box #button_test:hover {
+        transform: translateY(-0.7rem);
+        background-color: #484646;
+        color: #ac8282;
+        box-shadow: 0 1.5rem 1.5rem rgba(128, 128, 128, 0.518); }
+      .header-container #text_box #button_test:active {
+        transform: translateY(0.15rem);
+        box-shadow: 0 0.9rem 1rem rgba(128, 128, 128, 0.518); }
 
 @keyframes moveintop {
   0% {
@@ -133,6 +164,9 @@
     transform: rotate(-135deg);
     top: 0; }
 
+.nav-checkbox:checked ~ .checkbox {
+  box-shadow: none; }
+
 .checkbox {
   position: absolute;
   z-index: 2000;
@@ -167,7 +201,7 @@
   display: inline-block;
   position: absolute;
   z-index: 1000;
-  background-color: rgba(240, 255, 255, 0.2);
+  background-color: #484646;
   top: 7rem;
   right: 7rem;
   width: 0;
@@ -181,7 +215,7 @@
   width: 15rem;
   top: 4.5rem;
   right: 4.5rem;
-  background-color: rgba(240, 255, 255, 0.2); }
+  background-color: #484646; }
   @media (max-width: 400px) {
     .nav-checkbox:checked ~ .nav-background {
       width: 13.5rem; } }
@@ -190,7 +224,7 @@
   transform: translate(-40%, -60%);
   visibility: visible;
   opacity: 1;
-  transition: opacity 1s, visibility 0.8s, transform 0.8s ease; }
+  transition: opacity 2.5s, visibility 0.8s, transform 0.8s ease; }
 
 .nav-checkbox:not(:checked) ~ .menu-container {
   transform: translate(-30%, -95%);
@@ -203,12 +237,12 @@
   text-align: center;
   color: black;
   z-index: 1999;
-  top: 23.5rem;
+  top: 22.5rem;
   right: 2rem;
   backface-visibility: hidden; }
   @media (max-width: 400px) {
     .menu-container {
-      top: 23.5rem;
+      top: 22.5rem;
       right: 1.5rem; } }
   .menu-container ul {
     list-style: none; }
@@ -216,11 +250,13 @@
       margin-bottom: 2rem; }
       .menu-container ul li a {
         text-decoration: none;
-        color: #ac8282;
+        color: azure;
         background-color: #484646;
         font-size: 2.5rem;
         padding: 0.7rem;
         border-radius: 1rem; }
+        .menu-container ul li a:hover {
+          color: #ac8282; }
 
 .first-card {
   position: relative;
@@ -362,7 +398,7 @@
       box-shadow: 0 0 30px -5px #ce9359; }
 
 .section-about {
-  background-image: linear-gradient(to right, rgba(11, 141, 141, 0.7), rgba(65, 192, 192, 0.7)), url("section-image.jpg");
+  background-image: linear-gradient(to right, rgba(140, 211, 211, 0.7), rgba(125, 208, 208, 0.7), rgba(110, 196, 196, 0.7), rgba(99, 189, 189, 0.7), rgba(85, 182, 182, 0.7), rgba(77, 177, 177, 0.7)), url("section-image.jpg");
   margin-top: 2rem;
   background-position: bottom;
   background-size: cover;
